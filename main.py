@@ -42,4 +42,4 @@ def generate_image(tool_input, cat):
 
     size = settings['image_size'].split('x')
 
-    return f"""<img src="{image}" style="width: {int(size[0]) / 2}px; height: {int(size[1]) / 2}px;" alt='Generated image" />"""
+    return f"<img src="{image}" style="width: {int(size[0]) / 2}px; height: {int(size[1]) / 2}px;" alt='Generated image" />"
