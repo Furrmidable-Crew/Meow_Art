@@ -10,7 +10,7 @@ class ImageSize(Enum):
     height: str = '1024x1792'
 
 class Settings(BaseModel):
-    api_key: str = Field(title="API Key", description="The API key for OpenAI's transcription API.", default="")
+    api_key: str = Field(title="API Key", description="The API key for OpenAI's image generation API.", default="")
     image_size: ImageSize = Field(title="Image size", description="The size for the image to generate", default=ImageSize.quad)
 
 @plugin
@@ -28,7 +28,7 @@ def generate_image(tool_input, cat):
 
     if settings == {}:
         log.error("No configuration found for CatEyes")
-        return "You did not configure the API key for the transcription API!"
+        return "You did not configure the API key for the image generation API!"
 
     req = requests.post("https://api.openai.com/v1/images/generations", 
                         headers={
