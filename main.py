@@ -26,6 +26,10 @@ def generate_image(tool_input, cat):
 
     settings = cat.mad_hatter.plugins["meow_art"].load_settings()
 
+    if settings == {}:
+        log.error("No configuration found for CatEyes")
+        return "You did not configure the API key for the transcription API!"
+
     req = requests.post("https://api.openai.com/v1/images/generations", 
                         headers={
                             "Authorization": f"Bearer {settings['api_key']}",
