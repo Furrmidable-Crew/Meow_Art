@@ -27,7 +27,7 @@ def generate_image(tool_input, cat):
     settings = cat.mad_hatter.plugins["meow_art"].load_settings()
 
     if settings == {}:
-        log.error("No configuration found for CatEyes")
+        log.error("No configuration found for MeowArt")
         return "You did not configure the API key for the image generation API!"
 
     req = requests.post("https://api.openai.com/v1/images/generations", 
