@@ -1,10 +1,10 @@
 {
-    "name": "Artistic Cat",
-    "version": "0.0.1",
+    "name": "Meow Art",
+    "version": "0.0.2",
     "description": "A plugin to generate images from a prompt. It's suggested to start the prompt with 'generate an image that ...'",
     "author_name": "zAlweNy26",
     "author_url": "https://github.com/zAlweNy26",
-    "plugin_url": "https://github.com/Furrmidable-Crew/artistic_cat",
+    "plugin_url": "https://github.com/Furrmidable-Crew/Meow_Art",
     "tags": "cat, openai, image generation",
     "thumb": "https://raw.githubusercontent.com/Furrmidable-Crew/artistic_cat/main/artistic_cat_logo.png"
 }
