@@ -1,6 +1,6 @@
-# Artistic Cat
+# Meow Art
 
-[![awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=awesome+plugin&color=383938&style=for-the-badge&logo=cheshire_cat_ai)](https://github.com/Furrmidable-Crew/artistic_cat)
+[![Awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=awesome+plugin&color=383938&style=for-the-badge&logo=cheshire_cat_ai)](https://github.com/Furrmidable-Crew/Meow_Art)
 
 A plugin to generate images from a prompt
 
