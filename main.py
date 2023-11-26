@@ -20,8 +20,8 @@ def settings_schema():
 @tool(return_direct=True)
 def generate_image(tool_input, cat):
     """
-    A plugin used to generate an image based on a text.
-    The input is the text used as a prompt for the image generation.
+    Useful to generate an image based on a text.
+    The input is the user's requested image.
     """
 
     settings = cat.mad_hatter.plugins["meow_art"].load_settings()
