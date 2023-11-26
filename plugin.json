@@ -1,6 +1,6 @@
 {
     "name": "Meow Art",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A plugin to generate images from a prompt. It's suggested to start the prompt with 'generate an image that ...'",
     "author_name": "zAlweNy26",
     "author_url": "https://github.com/zAlweNy26",
