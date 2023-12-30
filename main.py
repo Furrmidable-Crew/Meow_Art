@@ -9,9 +9,25 @@ class ImageSize(Enum):
     width: str = '1792x1024'
     height: str = '1024x1792'
 
+class Quality(Enum):
+    hd: str = 'hd'
+    standard: str = 'standard'
+
+class Style(Enum):
+    natural: str = 'natural'
+    vivid: str = 'vivid'
+
+class Model(Enum):
+    dalle3: str = 'dall-e-3'
+    dalle2: str = 'dall-e-2'
+
 class Settings(BaseModel):
     api_key: str = Field(title="API Key", description="The API key for OpenAI's image generation API.", default="")
     image_size: ImageSize = Field(title="Image size", description="The size for the image to generate", default=ImageSize.quad)
+    quality: Quality = Field(title="Image quality", description="The quality for the image to generate", default=Quality.hd)
+    style: Style = Field(title="Image style", description="The style for the image to generate", default=Style.natural)
+    model: Model = Field(title="Model", description="The model to use for the image to generate", default=Model.dalle3)
+    
 
 @plugin
 def settings_schema():   
@@ -35,9 +51,10 @@ def generate_image(tool_input, cat):
                             "Authorization": f"Bearer {settings['api_key']}",
                             "Content-Type": "application/json"
                         }, data=json.dumps({
-                            "quality": "hd",
-                            "model": "dall-e-3",
+                            "quality": settings['quality'],
+                            "model": settings['model'],
                             "prompt": tool_input,
+                            "style": settings['style'],
                             "size": settings['image_size']
                         }))
     res = req.json()
