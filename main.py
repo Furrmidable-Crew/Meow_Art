@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field, model_validator
 from cat.log import log
 from enum import Enum
 import requests
-import json    
+import json
 
 class ImageSize(Enum):
     quad: str = '1024x1024'
@@ -44,12 +44,8 @@ class Settings(BaseModel):
 
     
 @plugin
-def settings_schema():   
-   return Settings.schema()
-    
-# @plugin
-# def settings_model():
-    # return Settings
+def settings_model():
+    return Settings
 
 @tool(return_direct=True)
 def generate_image(tool_input, cat):
@@ -80,5 +76,5 @@ def generate_image(tool_input, cat):
     image = res['data'][0]['url']
 
     size = settings['image_size'].split('x')
-
-    return f"<img src='{image}' style='width: {int(size[0]) / 2}px; height: {int(size[1]) / 2}px;' alt='Generated image' />" # it could be nice to create a download button for the original quality and not the half
+    # TODO: It would be nice to add a button to download the original quality of the image
+    return f"<img src='{image}' style='width: {int(size[0]) / 2}px; height: {int(size[1]) / 2}px;' alt='Generated image' />"
